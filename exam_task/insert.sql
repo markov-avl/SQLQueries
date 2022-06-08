@@ -199,3 +199,122 @@ VALUES ('Евфросиния', 'Захаровна', 'г. Кулунда, пр.
 INSERT INTO climbers (name, surname, address)
 VALUES ('Марков', 'Радован', 'ст. Шереметьево, ул. Новгородская, д. 2/7 стр. 4');
 
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Макалу', 'Непал', 'Гималаи', 8485);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Манаслу', 'Непал', 'Гималаи', 8163);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Нанга Парбат', 'Пакистан', 'Гималаи', 8126);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Шишапангма', 'Китай', 'Гималаи', 8027);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Гашербрум III', 'Пакистан', 'Каракорум', 7952);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Аннапурна II', 'Непал', 'Гималаи', 7937);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Дистагил Сар', 'Пакистан', 'Каракорум', 7885);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Кхуньянг Чхиш', 'Пакистан', 'Каракорум', 7852);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Батура Сар', 'Пакистан', 'Каракорум', 7795);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Канджут Сар', 'Пакистан', 'Каракорум', 7790);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Ракапоши', 'Пакистан', 'Каракорум', 7788);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Намча Барва', 'Китай', 'Гималаи', 7782);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Батура II', 'Пакистан', 'Каракорум', 7762);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Батура III', 'Пакистан', 'Каракорум', 7729);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Чоголиса', 'Пакистан', 'Каракорум', 7665);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Шиспаре', 'Пакистан', 'Каракорум', 7611);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Аннапурна III', 'Непал', 'Гималаи', 7555);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Юкшин Гардан Сар', 'Пакистан', 'Каракорум', 7530);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Аннапурна IV', 'Непал', 'Гималаи', 7525);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Пумари Чхиш', 'Пакистан', 'Каракорум', 7492);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Малубитинг', 'Пакистан', 'Каракорум', 7458);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Момхил Сар', 'Пакистан', 'Каракорум', 7414);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('История', 'Пакистан', 'Гиндукуш', 7403);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Пик Харамош', 'Пакистан', 'Каракорум', 7397);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Ультар', 'Пакистан', 'Каракорум', 7388);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Шерпи Кангри', 'Пакистан', 'Каракорум', 7380);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Аби Гамин', 'Индия', 'Гималаи', 7355);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Сараграр', 'Пакистан', 'Гиндукуш', 7340);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Боджохагур Дуанасир', 'Пакистан', 'Каракорум', 7329);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Чонгтар Кангри', 'Пакистан', 'Каракорум', 7315);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Балторо Кангри', 'Пакистан', 'Каракорум', 7312);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Сигуанг Ри', 'Китай', 'Гималаи', 7308);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Гьяла Пери', 'Китай', 'Гималаи', 7294);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Поронг Ри', 'Китай', 'Гималаи', 7292);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Ютмару Сар', 'Пакистан', 'Каракорум', 7283);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Канпэнцин', 'Китай', 'Гималаи', 7281);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Музтагская башня', 'Пакистан', 'Каракорум', 7273);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Диран', 'Пакистан', 'Каракорум', 7257);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Лангтанг Лирунг', 'Непал', 'Гималаи', 7227);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Карцзян', 'Китай', 'Гималаи', 7221);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Аннапурна Южная', 'Непал', 'Гималаи', 7219);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Хартафу', 'Китай', 'Гималаи', 7213);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Лупгар Сар', 'Пакистан', 'Каракорум', 7200);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Гурджа Гималаи', 'Непал', 'Гималаи', 7193);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Гашербрум В', 'Пакистан', 'Каракорум', 7147);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Латок I', 'Пакистан', 'Каракорум', 7145);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Кампире Диор', 'Пакистан', 'Каракорум', 7143);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Немджунг', 'Непал', 'Гималаи', 7140);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Удрен Зом', 'Пакистан', 'Гиндукуш', 7140);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Буларунг Сар', 'Пакистан', 'Каракорум', 7134);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Чомолхари Кан', 'Бутан', 'Гималаи', 7046);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Сайпал', 'Непал', 'Гималаи', 7031);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Падманабх', 'Индия', 'Гималаи', 7030);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Спантик', 'Пакистан', 'Каракорум', 7027);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Сар Памри', 'Пакистан', 'Каракорум', 7016);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Пик Лайла', 'Пакистан', 'Гималаи', 5971);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Фалак Сар', 'Пакистан', 'Гиндукуш', 5918);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Диндав Рази', 'Мьянма', 'Гималаи', 5464);
+INSERT INTO mountains (name, country, region, height)
+VALUES ('Тами Рази', 'Мьянма', 'Гималаи', 5101);
+

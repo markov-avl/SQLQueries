@@ -508,23 +508,23 @@ WHERE student_id = 100;
 -- 1. Пусть существует таблица с именем STUDENT1, определения столбцов которой полностью совпадают с определениями
 -- столбцов таблицы STUDENT. Вставьте в эту таблицу сведения о студентах, успешно сдавших экзамены более чем по пяти
 -- предметам обучения.
-INSERT INTO student1
-SELECT *
-FROM student
-WHERE (SELECT COUNT(subj_id)
-       FROM exam_marks
-       WHERE exam_marks.student_id =
-             student.student_id
-         AND mark > 2) > 5;
+-- INSERT INTO student1
+-- SELECT *
+-- FROM student
+-- WHERE (SELECT COUNT(subj_id)
+--        FROM exam_marks
+--        WHERE exam_marks.student_id =
+--              student.student_id
+--          AND mark > 2) > 5;
 
 -- 2. Напишите команду, удаляющую из таблицы SUBJECT1 сведения о предметах обучения, по которым студентами не получено
 -- ни одной оценки.
-DELETE
-FROM subject1
-WHERE NOT EXISTS(SELECT COUNT(mark)
-                 FROM exam_marks,
-                      subject
-                 WHERE exam_marks.subj_id = subject.subj_id);
+-- DELETE
+-- FROM subject1
+-- WHERE NOT EXISTS(SELECT COUNT(mark)
+--                  FROM exam_marks,
+--                       subject
+--                  WHERE exam_marks.subj_id = subject.subj_id);
 
 -- 3. Напишите запрос, увеличивающий размер стипендии на 20% всем студентам, у которых общая сумма баллов превышает
 -- значение 50.
@@ -563,7 +563,7 @@ CREATE INDEX stud ON student (kurs);
 -- 1. Создайте таблицу EXAM_MARKS так, чтобы не допускался ввод в таблицу двух записей об оценках одного студента по
 -- конкретным экзамену и предмету обучения, а также, чтобы не допускалось проведение двух экзаменов по любым предметам
 -- в один день.
-CREATE TABLE exam_marks
+CREATE TABLE exam_marks_1
 (
     exam_id    INTEGER NOT NULL,
     subj_id    INTEGER NOT NULL,
@@ -611,18 +611,18 @@ CREATE TABLE exam_marks
 -- (преподаватель), а поле SUBJ_ID является внешним ключом, ссылающимся на таблицу SUBJECT_1, аналогичную таблице
 -- SUBJECT), но добавьте для всех ее внешних ключей режим обеспечения ссылочной целостности, запрещающий обновление и
 -- удаление соответствующих родительских ключей.
-CREATE TABLE subj_lect_1
-(
-    lecturer_id INTEGER NOT NULL,
-    subj_id     INTEGER NOT NULL,
-    CONSTRAINT subj_id
-        PRIMARY KEY (lecturer_id, subj_id),
-    CONSTRAINT lecturer_id_foreign_key
-        FOREIGN KEY (lecturer_id)
-            REFERENCES lecturer_1 ON UPDATE NO ACTION ON DELETE NO ACTION,
-    CONSTRAINT subject_id_foreign_key FOREIGN KEY (subj_id)
-        REFERENCES subject_1 ON UPDATE NO ACTION ON DELETE NO ACTION
-);
+-- CREATE TABLE subj_lect_1
+-- (
+--     lecturer_id INTEGER NOT NULL,
+--     subj_id     INTEGER NOT NULL,
+--     CONSTRAINT subj_id
+--         PRIMARY KEY (lecturer_id, subj_id),
+--     CONSTRAINT lecturer_id_foreign_key
+--         FOREIGN KEY (lecturer_id)
+--             REFERENCES lecturer_1 ON UPDATE NO ACTION ON DELETE NO ACTION,
+--     CONSTRAINT subject_id_foreign_key FOREIGN KEY (subj_id)
+--         REFERENCES subject_1 ON UPDATE NO ACTION ON DELETE NO ACTION
+-- );
 
 -- 7. Создайте таблицу с именем STUDENT_1. Она должна содержать те же поля, что и таблица STUDENT, и новое поле
 -- SENIOR_STUDENT (староста), значением которого должен быть идентификатор студента, являющегося старостой группы, в
@@ -730,15 +730,15 @@ GRANT SELECT ON exam_marks TO sidorov
 
 -- 3. Отмените привилегию INSERT по отношению к таблице STUDENT у пользователя IVANOV и у всех других пользователей,
 -- которым привилегия, в свою очередь, была предоставлена этим пользователем IVANOV.
-REVOKE INSERT ON student FROM ivanod;
+REVOKE INSERT ON student FROM ivanov;
 
 
 -- 6.12
 
 -- 1. Пользователь IVANOV передал Вам право SELECT в таблице EXAM_MARKS. Запишите команду, позволяющую Вам обращаться
 -- к этой таблице, используя имя EXAM_MARKS без префикса.
-CREATE SYNONYM exam_marks FOR ivanov.exam_marks;
+-- CREATE SYNONYM exam_marks FOR ivanov.exam_marks;
 
 -- 2. Вы передали право SELECT в таблице EXAM_MARKS пользователю IVANOV. Запишите команду, позволяющую ему обращаться к
 -- этой таблице, используя имя EXAM_MARKS без префикса.
-CREATE PUBLIC SYNONYM exam_marks FOR exam_marks;
+-- CREATE PUBLIC SYNONYM exam_marks FOR exam_marks;

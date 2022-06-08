@@ -51,10 +51,10 @@ CREATE TABLE mountains
 -- Восхождения
 CREATE TABLE climbing
 (
-    id                  SERIAL NOT NULL,
-    climbing_start_date DATE   NOT NULL,
-    climbing_end_date   DATE   NOT NULL,
-    mountain_id         SERIAL NOT NULL,
+    id          SERIAL NOT NULL,
+    start_date  DATE   NOT NULL,
+    end_date    DATE   NOT NULL,
+    mountain_id SERIAL NOT NULL,
     CONSTRAINT climbing_pk PRIMARY KEY (id),
     CONSTRAINT climbing_mountains_fk FOREIGN KEY (mountain_id) REFERENCES mountains (id) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
