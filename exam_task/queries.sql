@@ -18,3 +18,16 @@
 -- 8) Предоставить возможность добавления новой группы, указав ее название, вершину, время начала восхождения.
 -- 9) Предоставить информацию о том, сколько альпинистов побывало на каждой горе.
 
+
+WITH all_records AS (SELECT *
+                     FROM climbers
+                              INNER JOIN groups on climbers.id = groups.climber_id
+                              INNER JOIN climbing on climbing.id = groups.climbing_id)
+SELECT *
+FROM all_records ar1
+WHERE (SELECT COUNT(*)
+       FROM all_records ar2
+       WHERE ar1 != ar2
+         AND ar1.climber_id = ar2.climber_id
+         AND (ar1.start_date BETWEEN ar2.start_date AND ar2.end_date OR
+              ar1.end_date BETWEEN ar2.start_date AND ar2.end_date)) > 0
