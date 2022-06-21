@@ -12,7 +12,7 @@ SELECT mountains.name                                           AS mountain,
        STRING_AGG(groups.name, ', ' ORDER BY groups.start_date) AS groups
 FROM date,
      groups
-         INNER JOIN mountains on mountains.id = groups.mountain_id
+         INNER JOIN mountains ON mountains.id = groups.mountain_id
 WHERE groups.start_date BETWEEN date.start AND date.end
 GROUP BY mountains.name;
 
@@ -40,9 +40,9 @@ SELECT climbers.name || ' ' || climbers.surname AS climber,
        groups.start_date                        AS climbing_date
 FROM date,
      climbers
-         INNER JOIN group_members on climbers.id = group_members.climber_id
-         INNER JOIN groups on group_members.group_id = groups.id
-         INNER JOIN mountains on groups.mountain_id = mountains.id
+         INNER JOIN group_members ON climbers.id = group_members.climber_id
+         INNER JOIN groups ON group_members.group_id = groups.id
+         INNER JOIN mountains ON groups.mountain_id = mountains.id
 WHERE groups.start_date BETWEEN date.start AND date.end
 ORDER BY climber;
 
@@ -56,8 +56,8 @@ VALUES (1, 1);
 -- по количеству восхождений.
 SELECT climbers.name || ' ' || climbers.surname AS climber, COUNT(DISTINCT groups.mountain_id) AS climbing_count
 FROM climbers
-         INNER JOIN group_members on climbers.id = group_members.climber_id
-         INNER JOIN groups on group_members.group_id = groups.id
+         INNER JOIN group_members ON climbers.id = group_members.climber_id
+         INNER JOIN groups ON group_members.group_id = groups.id
 GROUP BY climbers.id
 ORDER BY climbing_count;
 
@@ -70,8 +70,8 @@ SELECT groups.id,
        STRING_AGG(climbers.name || ' ' || climbers.surname, ', ') AS members
 FROM date,
      groups
-         INNER JOIN group_members on groups.id = group_members.group_id
-         INNER JOIN climbers on group_members.climber_id = climbers.id
+         INNER JOIN group_members ON groups.id = group_members.group_id
+         INNER JOIN climbers ON group_members.climber_id = climbers.id
 WHERE groups.start_date BETWEEN date.start AND date.end
 GROUP BY groups.id;
 
@@ -82,8 +82,10 @@ VALUES ('Новая группа', 1, CURRENT_DATE);
 
 
 -- 9) Предоставить информацию о том, сколько альпинистов побывало на каждой горе.
-SELECT mountains.id, mountains.name, COUNT(DISTINCT group_members.climber_id) AS climber_count
-FROM mountains
-         INNER JOIN groups on mountains.id = groups.mountain_id
-         INNER JOIN group_members on groups.id = group_members.group_id
-GROUP BY mountains.id;
+SELECT mountains.id,
+       mountains.name,
+       (SELECT COUNT(DISTINCT group_members.climber_id)
+        FROM groups
+                 INNER JOIN group_members on groups.id = group_members.group_id
+        WHERE groups.mountain_id = mountains.id) AS climber_count
+FROM mountains;
